@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUSIM MEKARNYA RASA — Info Dokumen</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FFFEF9;
+  --red: #8B1A1A;
+  --blue: #1A2E5C;
+  --red-light: #C4544A;
+  --blue-light: #3D5A9A;
+  --muted: #8A7F7F;
+  --border: #E0D8D0;
+  --row-alt: #FAF7F2;
+  --tag-bg: #F5F0EA;
+}
+
+body {
+  background: var(--bg);
+  color: var(--blue);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--bg);
+  border-bottom: 2px solid var(--red);
+  padding: 20px 40px 16px;
+  text-align: center;
+}
+
+.banner-placeholder {
+  width: 100%;
+  max-width: 700px;
+  height: 160px;
+  border: 1.5px dashed var(--border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+
+.social-links a:hover { color: var(--red); }
+.social-sep { color: var(--muted); font-size: 11px; }
+
+/* ── PAGE ── */
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 56px 40px 100px;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  margin-bottom: 60px;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 44px;
+}
+
+.masthead-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.masthead-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 8vw, 80px);
+  font-weight: 900;
+  line-height: 0.95;
+  color: var(--red);
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.masthead-sub {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 20px;
+}
+
+.masthead-tagline {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 21px;
+  color: var(--blue);
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+
+.masthead-meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ── SECTION HEADERS ── */
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sec-marker {
+  color: var(--red);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.sec-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.sec-rule {
+  flex: 1;
+  height: 1.5px;
+  background: var(--red);
+  opacity: 0.3;
+}
+
+.section { margin-bottom: 60px; }
+
+/* ── ABOUT ── */
+.about-lede {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--blue-light);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.about-lede::before { content: '◇ '; }
+
+.about-body {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--blue);
+  margin-bottom: 14px;
+  max-width: 660px;
+}
+
+.about-body strong { color: var(--red); font-weight: 700; }
+
+.about-disclaimer {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--muted);
+  border-left: 2px solid var(--border);
+  padding-left: 12px;
+  margin-top: 16px;
+}
+
+/* ── SCHEDULE ── */
+.sched-table { width: 100%; border-collapse: collapse; }
+.sched-table tr { border-bottom: 1px solid var(--border); }
+.sched-table tr:last-child { border-bottom: none; }
+.sched-table tr:hover td { background: var(--row-alt); }
+.sched-table td { padding: 11px 4px; font-size: 13.5px; vertical-align: middle; }
+.sched-table td.s-event { color: var(--blue); width: 65%; }
+.sched-table td.s-date { color: var(--red); font-family: 'Courier New', Courier, monospace; font-size: 13px; text-align: right; white-space: nowrap; }
+.sched-table tr.s-key td.s-event { font-weight: 700; }
+.sched-table tr.s-checkin td { color: var(--muted); font-size: 12.5px; }
+.sched-table tr.s-checkin td.s-date { color: var(--muted); font-style: normal; font-family: 'Courier New', monospace; font-size: 12px; }
+.sched-table tr.s-final td.s-event { font-weight: 700; color: var(--red); }
+.sched-table tr.s-final td.s-date { font-weight: 700; }
+
+/* OLD (unused) */
+.sched-card { display: none; }
+
+.sched-card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.15s;
+}
+
+.sched-card:hover { background: var(--row-alt); }
+
+.sched-card.key {
+  border-color: var(--blue);
+  border-width: 1.5px;
+}
+
+.sched-card.checkin {
+  opacity: 0.75;
+}
+
+.sched-card-date {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--red);
+  line-height: 1.2;
+}
+
+.sched-card-event {
+  font-size: 12.5px;
+  color: var(--blue);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.sched-card.checkin .sched-card-event {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.sched-card-pct {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ── SPECS ── */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1.5px solid var(--blue);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.spec-item {
+  padding: 18px 16px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+
+.spec-item:last-child { border-right: none; }
+
+.spec-lbl {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.spec-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* ── CHAPTERS ── */
+.ch-list { display: grid; gap: 0; border: 1.5px solid var(--blue); border-radius: 4px; overflow: hidden; }
+
+.ch-card { border-bottom: 1px solid var(--border); }
+.ch-card:last-child { border-bottom: none; }
+
+.ch-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 22px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.ch-head:hover { background: var(--row-alt); }
+
+.ch-num {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 4px;
+  flex-shrink: 0;
+  width: 72px;
+}
+
+.ch-label { flex: 1; }
+
+.ch-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1.2;
+}
+
+.ch-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--blue-light);
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
+
+.ch-tog {
+  font-size: 20px;
+  color: var(--muted);
+  flex-shrink: 0;
+  padding-top: 2px;
+  line-height: 1;
+}
+
+.ch-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 22px;
+  border-top: 0px solid var(--border);
+}
+
+.ch-body.open {
+  max-height: 600px;
+  padding: 16px 22px 20px;
+  border-top: 1px dashed var(--border);
+}
+
+.ch-desc {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--blue);
+  line-height: 1.65;
+  margin-bottom: 14px;
+  max-width: 560px;
+}
+
+.tone-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tone-lbl {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tone-tag {
+  font-size: 10px;
+  padding: 2px 10px;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--blue);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.prompts-lbl {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.prompts { list-style: none; display: grid; gap: 5px; }
+.prompts li {
+  font-size: 13px;
+  color: var(--blue);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.6;
+}
+.prompts li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-size: 10px;
+  top: 3px;
+}
+
+/* ── ROLES ── */
+.roles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.role-card {
+  border: 1.5px solid var(--blue);
+  border-radius: 4px;
+  padding: 18px 22px;
+}
+
+.role-type {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.role-list { list-style: none; display: grid; gap: 5px; }
+.role-list li { font-size: 13px; color: var(--blue); padding-left: 16px; position: relative; }
+.role-list li::before { content: '▸'; position: absolute; left: 0; color: var(--red); font-size: 10px; top: 3px; }
+
+/* ── GUIDELINES ── */
+.gl-block { margin-bottom: 30px; }
+
+.gl-sub {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gl-sub::before { content: '//'; color: var(--red); font-size: 12px; }
+
+.gl-list { list-style: none; display: grid; gap: 8px; }
+.gl-list li { font-size: 13.5px; color: var(--blue); padding-left: 18px; position: relative; line-height: 1.7; }
+.gl-list li::before { content: '—'; position: absolute; left: 0; color: var(--muted); font-size: 11px; top: 2px; }
+
+.notice {
+  border: 1.5px solid var(--red);
+  border-radius: 3px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  background: #FDF5F5;
+}
+
+.notice p { font-size: 13px; color: var(--red); line-height: 1.7; }
+.notice strong { font-weight: 700; }
+
+/* ── COMPENSATION ── */
+.comp-card {
+  border: 1.5px solid var(--blue);
+  border-radius: 4px;
+  padding: 24px 28px;
+}
+
+.comp-list { list-style: none; display: grid; gap: 8px; margin: 14px 0 18px; }
+.comp-list li { font-size: 13.5px; color: var(--blue); padding-left: 20px; position: relative; line-height: 1.7; }
+.comp-list li::before { content: '✦'; position: absolute; left: 0; color: var(--red); font-size: 9px; top: 4px; }
+
+.comp-note { font-size: 12px; color: var(--muted); line-height: 1.7; font-style: italic; }
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 2px solid var(--red);
+  text-align: center;
+}
+
+.footer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .page { padding: 36px 20px 60px; }
+  .topbar { padding: 16px 20px; }
+  .specs-grid { grid-template-columns: 1fr 1fr; }
+  .roles-grid { grid-template-columns: 1fr; }
+  .spec-item { border-bottom: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="banner-placeholder">[ banner image — coming soon ]</div>
+  <div class="social-links">
+    <a href="https://x.com/731chapters" target="_blank">Twitter / X</a>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <p class="masthead-eyebrow">Info Dokumen Fanzine</p>
+    <h1 class="masthead-title">MUSIM<br>MEKARNYA<br>RASA</h1>
+    <p class="masthead-sub">A Nidjae Fanzine</p>
+    <p class="masthead-tagline">Untuk memilihmu, dalam ketenangan setiap hari.<br>Kemarin, hari ini, dan semua hari esok.</p>
+    <p class="masthead-meta">Terakhir diperbarui: 8 Juni 2026 &nbsp;·&nbsp; Dokumen ini dapat diperbarui sewaktu-waktu.</p>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">About</span>
+      <div class="sec-rule"></div>
+    </div>
+    <p class="about-lede">Cinta yang tumbuh dalam hal-hal sehari-hari.</p>
+    <p class="about-body"><strong>MUSIM MEKARNYA RASA</strong> adalah tentang cinta yang bersembunyi dalam hal-hal sehari-hari. Bukan hanya tentang jatuh cinta, tetapi tentang terus memilih satu sama lain, berulang kali, setelah semua yang telah mereka lalui bersama — prinsip <em>old married couple</em>. Setiap karya dalam fanzine ini adalah satu sudut dari rumah yang sama.</p>
+    <p class="about-body">Proyek fanzine ini hadir sebagai perayaan atas cinta yang tumbuh di dalam komunitas ini, sekaligus sebagai surat cinta untuk Nidjae. Dari sisi desain, fanzine ini akan menyerupai majalah tradisional yang memadukan karya seni dan tulisan secara apik, dibangun di atas estetika yang hangat dan domestik.</p>
+    <p class="about-body">Kami ingin fanzine ini terasa seperti rumah yang dibangun oleh anggota komunitas — jika kamu punya cerita atau visi untuk yang ingin dihadirkan, kami tidak sabar untuk melihat karyamu!</p>
+    <p class="about-disclaimer">Proyek non-profesional yang dijalankan oleh penggemar, tidak berafiliasi dengan agensi dalam kapasitas resmi apapun.</p>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">Schedule</span>
+      <div class="sec-rule"></div>
+    </div>
+    <table class="sched-table">
+      <tr class="s-key"><td class="s-event">Interest Check</td><td class="s-date">3 Juni 2026</td></tr>
+      <tr class="s-key"><td class="s-event">Announcement</td><td class="s-date">21 Juni 2026</td></tr>
+      <tr class="s-key"><td class="s-event">Contributor Applications &amp; Pitches</td><td class="s-date">21 – 27 Juni 2026</td></tr>
+      <tr class="s-key"><td class="s-event">Contributor Application Result</td><td class="s-date">29 Juni 2026</td></tr>
+      <tr class="s-checkin"><td class="s-event">Check-in 1 — 30%</td><td class="s-date">12 Juli 2026</td></tr>
+      <tr class="s-checkin"><td class="s-event">Check-in 2 — 60%</td><td class="s-date">19 Juli 2026</td></tr>
+      <tr class="s-checkin"><td class="s-event">Check-in 3 — 90%</td><td class="s-date">26 Juli 2026</td></tr>
+      <tr class="s-final"><td class="s-event">Final Submission</td><td class="s-date">31 Juli 2026</td></tr>
+    </table>
+  </section>
+
+  <!-- ZINE SPECS -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">Zine Specs</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-item"><div class="spec-lbl">Ukuran</div><div class="spec-val">A5</div></div>
+      <div class="spec-item"><div class="spec-lbl">Cover</div><div class="spec-val">Softcover</div></div>
+      <div class="spec-item"><div class="spec-lbl">Warna</div><div class="spec-val">Full Color</div></div>
+      <div class="spec-item"><div class="spec-lbl">Halaman &amp; Kontributor</div><div class="spec-val">TBA</div></div>
+    </div>
+  </section>
+
+  <!-- TEMA / CHAPTERS -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">Tema</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="ch-list">
+
+      <div class="ch-card">
+        <div class="ch-head" onclick="toggleCh(this)">
+          <span class="ch-num">Chapter 1</span>
+          <div class="ch-label">
+            <div class="ch-name">PAGI</div>
+            <div class="ch-subtitle">'Yang Pertama Dilihat Waktu Bangun'</div>
+          </div>
+          <span class="ch-tog">+</span>
+        </div>
+        <div class="ch-body">
+          <p class="ch-desc">Menjelajahi awal hari mereka yang lembut, dari rutinitas yang tidak pernah berubah hingga kenyamanan diam-diam saat terbangun di sisi satu sama lain.</p>
+          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Hangat</span><span class="tone-tag">Tenang</span><span class="tone-tag">Fluff</span></div>
+          <div class="prompts-lbl">Prompts</div>
+          <ul class="prompts">
+            <li>Sarapan yang dibuat tanpa diminta</li>
+            <li>Rutinitas pagi yang tidak berubah selama bertahun-tahun</li>
+            <li>Rambut berantakan dan tidak ada yang peduli</li>
+            <li>Siapa yang bangun duluan dan kenapa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ch-card">
+        <div class="ch-head" onclick="toggleCh(this)">
+          <span class="ch-num">Chapter 2</span>
+          <div class="ch-label">
+            <div class="ch-name">SIANG</div>
+            <div class="ch-subtitle">'Yang Dirasakan Waktu Kamu Tidak Ada di Sini'</div>
+          </div>
+          <span class="ch-tog">+</span>
+        </div>
+        <div class="ch-body">
+          <p class="ch-desc">Menjelajahi beratnya jam-jam yang dihabiskan terpisah, janji-janji tak terucap dan kebiasaan yang terbentuk dengan sendirinya, yang membuat mereka merindukan rumah.</p>
+          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Playful</span><span class="tone-tag">Slice of Life</span></div>
+          <div class="prompts-lbl">Prompts</div>
+          <ul class="prompts">
+            <li>Diam-diam bangga sama satu sama lain</li>
+            <li>"Nanti cerita" — janji kecil yang jadi alasan pulang</li>
+            <li>Beli dua padahal buat sendiri karena sudah terlalu terbiasa</li>
+            <li>Menghitung jam sampai pulang tanpa sadar sudah menghitung</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ch-card">
+        <div class="ch-head" onclick="toggleCh(this)">
+          <span class="ch-num">Chapter 3</span>
+          <div class="ch-label">
+            <div class="ch-name">SORE</div>
+            <div class="ch-subtitle">'Yang Tidak Perlu Diucapkan Tapi Selalu Dirasakan'</div>
+          </div>
+          <span class="ch-tog">+</span>
+        </div>
+        <div class="ch-body">
+          <p class="ch-desc">Menjelajahi kedekatan yang ditemukan dalam keheningan yang nyaman, di mana kata-kata tak lagi dibutuhkan untuk saling memahami.</p>
+          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Melankolis</span><span class="tone-tag">Sinematik</span></div>
+          <div class="prompts-lbl">Prompts</div>
+          <ul class="prompts">
+            <li>Duduk di dekat jendela, tidak ngobrol, tapi tidak perlu</li>
+            <li>Hujan dan tidak kemana-mana</li>
+            <li>Suara langkahnya yang sudah hafal dari kejauhan</li>
+            <li>Tidak perlu ditanya "kamu baik-baik saja?" karena sudah tahu dari cara dia masuk pintu</li>
+            <li>Ketenangan yang hanya ada waktu dia di ruangan yang sama</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ch-card">
+        <div class="ch-head" onclick="toggleCh(this)">
+          <span class="ch-num">Chapter 4</span>
+          <div class="ch-label">
+            <div class="ch-name">MALAM</div>
+            <div class="ch-subtitle">'Yang Tetap Ada di Ujung Hari'</div>
+          </div>
+          <span class="ch-tog">+</span>
+        </div>
+        <div class="ch-body">
+          <p class="ch-desc">Menjelajahi momen-momen paling intim di penghujung hari, dari ritual larut malam hingga kehangatan yang menenangkan saat tertidur bersama.</p>
+          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Intim</span><span class="tone-tag">Berat tapi Hangat</span></div>
+          <div class="prompts-lbl">Prompts</div>
+          <ul class="prompts">
+            <li>Lampu yang selalu dinyalakan kalau yang satu belum pulang</li>
+            <li>Cerita tentang hari masing-masing sebelum tidur</li>
+            <li>Tertidur duluan dan tidak ada yang marah</li>
+            <li>Ritual kecil sebelum tidur yang tidak pernah berubah selama bertahun-tahun</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">Peran Kontributor</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-type">Artists</div>
+        <ul class="role-list">
+          <li>Single-page artists</li>
+          <li>Comic / webtoon artists</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <div class="role-type">Writers</div>
+        <ul class="role-list">
+          <li>Poetry</li>
+          <li>Short fiction (maks. 3.000 kata)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDELINES -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">Panduan Kontributor</span>
+      <div class="sec-rule"></div>
+    </div>
+
+    <div class="gl-block">
+      <div class="gl-sub">Konten</div>
+      <ul class="gl-list">
+        <li>Semua karya harus merupakan karya orisinal yang dibuat khusus untuk zine ini.</li>
+        <li>Semua karya harus mengikuti template, tema, dan format yang telah ditentukan.</li>
+        <li>Kebijakan ketat <strong>No Heavy/Dead Dove</strong> berlaku — pelecehan seksual, non-konsensual, major character death, atau graphic violence tidak diterima dalam kondisi apapun.</li>
+        <li>Karya 18+ diterima: harus dilabeli jelas dan kontributor wajib konfirmasi usia 18+. Kebijakan No Heavy/Dead Dove tetap berlaku.</li>
+      </ul>
+      <div class="notice">
+        <p>Penggunaan kecerdasan buatan atau AI generatif dalam karya <strong>dilarang keras</strong> dalam kapasitas apapun dan akan mengakibatkan pemecatan langsung dari proyek fanzine ini.</p>
+      </div>
+    </div>
+
+    <div class="gl-block">
+      <div class="gl-sub">Deadline</div>
+      <ul class="gl-list">
+        <li>Semua tenggat waktu wajib dipenuhi. Tiga kali pengingat akan diberikan oleh moderator.</li>
+        <li>Perpanjangan dapat diberikan atas permintaan berdasarkan kebijaksanaan moderator.</li>
+        <li>Jika tidak dapat melanjutkan, segera hubungi moderator fanzine.</li>
+      </ul>
+    </div>
+
+    <div class="gl-block">
+      <div class="gl-sub">Komunikasi</div>
+      <ul class="gl-list">
+        <li>Kontributor bergabung ke Group DM resmi zine di X.</li>
+        <li>Pengumuman dan pengingat penting akan dibagikan di sana.</li>
+      </ul>
+    </div>
+
+    <div class="gl-block">
+      <div class="gl-sub">Kerahasiaan</div>
+      <ul class="gl-list">
+        <li>Karya (WIP maupun selesai) harus tetap privat — hanya boleh dibagikan di Group DM kontributor.</li>
+        <li>Pada minggu acara, preview boleh dibagikan setelah konsultasi dengan moderator.</li>
+        <li>Tujuh hari setelah acara, karya boleh dibagikan secara penuh; kontributor mempertahankan seluruh haknya.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PUBLIKASI -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">Penerbitan &amp; Distribusi</span>
+      <div class="sec-rule"></div>
+    </div>
+    <ul class="gl-list">
+      <li>Satu salinan fisik fanzine disertakan dalam acara untuk setiap peserta yang hadir.</li>
+      <li>Salinan digital akan diupload secara cuma-cuma setelah acara selesai.</li>
+    </ul>
+  </section>
+
+  <!-- KOMPENSASI -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-marker">𓇢𓆸</span>
+      <span class="sec-title">Kompensasi</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="comp-card">
+      <p style="font-size:14px;color:var(--blue);line-height:1.8;margin-bottom:4px;">MUSIM MEKARNYA RASA adalah proyek nirlaba sepenuhnya. Jika anggaran memungkinkan, tujuan utama kami adalah memberikan kompensasi kepada setiap kontributor berupa:</p>
+      <ul class="comp-list">
+        <li>Satu salinan fisik zine</li>
+        <li>Bundel merchandise lengkap acara MUSIM MEKARNYA RASA</li>
+        <li>Tiket diskon untuk menghadiri acara (apabila berlaku)</li>
+      </ul>
+      <p class="comp-note">Sisa dana setelah produksi akan didonasikan ke charity organization yang dipilih para kontributor. Tidak ada keuntungan yang disimpan oleh staf.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-title">MUSIM MEKARNYA RASA</p>
+  </footer>
+
+</div>
+
+<script>
+function toggleCh(header) {
+  const body = header.nextElementSibling;
+  const tog = header.querySelector('.ch-tog');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  tog.textContent = isOpen ? '+' : '−';
+}
+</script>
+</body>
+</html>
