@@ -4,51 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MUSIM MEKARNYA RASA — Info Dokumen</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #FFFEF9;
-  --red: #8B1A1A;
-  --blue: #1A2E5C;
-  --red-light: #C4544A;
-  --blue-light: #3D5A9A;
-  --muted: #8A7F7F;
-  --border: #E0D8D0;
-  --row-alt: #FAF7F2;
-  --tag-bg: #F5F0EA;
+  --warm-white: #FDFAF4;
+  --isabeline: #F2ECD8;
+  --parchment: #E8DFCA;
+  --brown: #4A3728;
+  --brown-mid: #7A5C48;
+  --brown-light: #B09080;
+  --sage: #7A7A52;
+  --sage-light: #B8B894;
+  --sage-bg: #EAEADA;
+  --mauve: #B08888;
+  --mauve-light: #DFC8C8;
+  --mauve-bg: #F5EDED;
+  --text: #3A2C20;
+  --muted: #9A8070;
 }
 
 body {
-  background: var(--bg);
-  color: var(--blue);
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
-  line-height: 1.7;
+  background: var(--warm-white);
+  color: var(--text);
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 /* ── TOP BAR ── */
 .topbar {
-  background: var(--bg);
-  border-bottom: 2px solid var(--red);
+  background: var(--isabeline);
+  border-bottom: 2px solid var(--sage-light);
   padding: 20px 40px 16px;
   text-align: center;
 }
 
 .banner-placeholder {
   width: 100%;
-  max-width: 700px;
-  height: 160px;
-  border: 1.5px dashed var(--border);
-  border-radius: 4px;
+  max-width: 680px;
+  height: 150px;
+  border: 1px dashed var(--brown-light);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 14px;
   color: var(--muted);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.08em;
 }
 
 .social-links {
@@ -56,244 +62,190 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 12px;
-  flex-wrap: wrap;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
 }
 
-.social-links a {
-  color: var(--blue);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-family: 'Courier New', monospace;
-  font-weight: 700;
-}
-
-.social-links a:hover { color: var(--red); }
-.social-sep { color: var(--muted); font-size: 11px; }
+.social-links a { color: var(--brown); text-decoration: underline; text-underline-offset: 3px; }
+.social-links a:hover { color: var(--sage); }
 
 /* ── PAGE ── */
-.page {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 56px 40px 100px;
-}
+.page { max-width: 760px; margin: 0 auto; padding: 64px 40px 100px; }
 
 /* ── MASTHEAD ── */
 .masthead {
-  margin-bottom: 60px;
-  border-bottom: 1.5px solid var(--border);
-  padding-bottom: 44px;
+  text-align: center;
+  margin-bottom: 64px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--parchment);
 }
 
-.masthead-eyebrow {
+.masthead::after {
+  content: '𓇢𓆸';
+  display: block;
+  text-align: center;
+  color: var(--sage);
+  font-size: 22px;
+  margin-top: 32px;
+}
+
+.mast-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.mast-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 9vw, 88px);
+  font-weight: 700;
+  line-height: 1.0;
+  color: var(--brown);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.mast-title em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--mauve);
+}
+
+.mast-sub {
+  font-family: 'DM Sans', sans-serif;
   font-size: 10px;
+  font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-.masthead-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(44px, 8vw, 80px);
-  font-weight: 900;
-  line-height: 0.95;
-  color: var(--red);
-  letter-spacing: -0.01em;
-  margin-bottom: 16px;
-}
-
-.masthead-sub {
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--blue-light);
-  margin-bottom: 20px;
-}
-
-.masthead-tagline {
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 21px;
-  color: var(--blue);
-  line-height: 1.65;
-  max-width: 520px;
-  margin-bottom: 20px;
-  letter-spacing: 0.01em;
-}
-
-.masthead-meta {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-/* ── SECTION HEADERS ── */
-.sec-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  color: var(--sage);
   margin-bottom: 24px;
 }
 
-.sec-marker {
-  color: var(--red);
-  font-size: 18px;
+.mast-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--brown-mid);
+  line-height: 1.6;
+  max-width: 460px;
+  margin: 0 auto 20px;
+}
+
+.mast-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 60px; }
+
+.sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+
+.sec-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--sage);
   flex-shrink: 0;
 }
 
-.sec-title {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--red);
-}
-
-.sec-rule {
-  flex: 1;
-  height: 1.5px;
-  background: var(--red);
-  opacity: 0.3;
-}
-
-.section { margin-bottom: 60px; }
+.sec-rule { flex: 1; height: 1px; background: linear-gradient(to right, var(--sage-light), transparent); }
+.sec-rule-left { flex: 1; height: 1px; background: linear-gradient(to left, var(--sage-light), transparent); }
 
 /* ── ABOUT ── */
 .about-lede {
-  font-size: 12px;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  color: var(--blue-light);
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--mauve);
   margin-bottom: 20px;
-  letter-spacing: 0.03em;
+  line-height: 1.55;
 }
 
-.about-lede::before { content: '◇ '; }
-
-.about-body {
-  font-size: 14.5px;
-  line-height: 1.85;
-  color: var(--blue);
-  margin-bottom: 14px;
-  max-width: 660px;
-}
-
-.about-body strong { color: var(--red); font-weight: 700; }
+.about-body { font-size: 16px; line-height: 1.9; color: var(--text); margin-bottom: 14px; max-width: 660px; }
+.about-body strong { color: var(--brown); font-weight: 500; }
 
 .about-disclaimer {
+  font-family: 'DM Sans', sans-serif;
   font-size: 11px;
-  font-style: italic;
+  font-weight: 300;
   color: var(--muted);
-  border-left: 2px solid var(--border);
-  padding-left: 12px;
-  margin-top: 16px;
+  font-style: italic;
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--sage-light);
+  background: var(--sage-bg);
+  border-radius: 0 2px 2px 0;
 }
 
 /* ── SCHEDULE ── */
 .sched-table { width: 100%; border-collapse: collapse; }
-.sched-table tr { border-bottom: 1px solid var(--border); }
+.sched-table tr { border-bottom: 1px solid var(--parchment); }
 .sched-table tr:last-child { border-bottom: none; }
-.sched-table tr:hover td { background: var(--row-alt); }
-.sched-table td { padding: 11px 4px; font-size: 13.5px; vertical-align: middle; }
-.sched-table td.s-event { color: var(--blue); width: 65%; }
-.sched-table td.s-date { color: var(--red); font-family: 'Courier New', Courier, monospace; font-size: 13px; text-align: right; white-space: nowrap; }
-.sched-table tr.s-key td.s-event { font-weight: 700; }
-.sched-table tr.s-checkin td { color: var(--muted); font-size: 12.5px; }
-.sched-table tr.s-checkin td.s-date { color: var(--muted); font-style: normal; font-family: 'Courier New', monospace; font-size: 12px; }
-.sched-table tr.s-final td.s-event { font-weight: 700; color: var(--red); }
-.sched-table tr.s-final td.s-date { font-weight: 700; }
+.sched-table tr:hover td { background: var(--isabeline); }
+.sched-table td { padding: 12px 6px; vertical-align: middle; }
 
-/* OLD (unused) */
-.sched-card { display: none; }
-
-.sched-card {
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 14px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  transition: background 0.15s;
-}
-
-.sched-card:hover { background: var(--row-alt); }
-
-.sched-card.key {
-  border-color: var(--blue);
-  border-width: 1.5px;
-}
-
-.sched-card.checkin {
-  opacity: 0.75;
-}
-
-.sched-card-date {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 15px;
-  color: var(--red);
-  line-height: 1.2;
-}
-
-.sched-card-event {
-  font-size: 12.5px;
-  color: var(--blue);
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.sched-card.checkin .sched-card-event {
+.sched-table td.s-event {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--muted);
+  color: var(--text);
+  width: 65%;
 }
 
-.sched-card-pct {
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-top: 2px;
+.sched-table td.s-date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--brown-mid);
+  text-align: right;
+  white-space: nowrap;
 }
+
+.sched-table tr.s-key td.s-event { color: var(--brown); font-weight: 400; }
+.sched-table tr.s-checkin td.s-event { color: var(--muted); font-size: 13px; }
+.sched-table tr.s-checkin td.s-date { color: var(--brown-light); }
+.sched-table tr.s-final td.s-event { font-weight: 700; color: var(--brown); }
+.sched-table tr.s-final td { background: var(--mauve-bg); }
+.sched-table tr.s-final td.s-date { color: var(--mauve); font-weight: 400; }
 
 /* ── SPECS ── */
-.specs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border: 1.5px solid var(--blue);
-  border-radius: 4px;
-  overflow: hidden;
-}
+.specs-row { display: flex; border-radius: 4px; overflow: hidden; gap: 8px; }
 
 .spec-item {
+  flex: 1;
   padding: 18px 16px;
-  border-right: 1px solid var(--border);
   text-align: center;
+  border-radius: 3px;
 }
 
-.spec-item:last-child { border-right: none; }
+.spec-item:nth-child(1) { background: var(--sage-bg); border: 1px solid var(--sage-light); }
+.spec-item:nth-child(2) { background: var(--isabeline); border: 1px solid var(--parchment); }
+.spec-item:nth-child(3) { background: var(--mauve-bg); border: 1px solid var(--mauve-light); }
+.spec-item:nth-child(4) { background: var(--isabeline); border: 1px solid var(--parchment); }
 
-.spec-lbl {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.spec-val {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--blue);
-}
+.spec-lbl { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.spec-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--brown); font-style: italic; }
 
 /* ── CHAPTERS ── */
-.ch-list { display: grid; gap: 0; border: 1.5px solid var(--blue); border-radius: 4px; overflow: hidden; }
+.ch-list { display: grid; gap: 8px; }
 
-.ch-card { border-bottom: 1px solid var(--border); }
-.ch-card:last-child { border-bottom: none; }
+.ch-card { border-radius: 3px; overflow: hidden; transition: box-shadow 0.2s; }
+.ch-card:nth-child(1) { border: 1.5px solid var(--sage-light); }
+.ch-card:nth-child(2) { border: 1.5px solid var(--mauve-light); }
+.ch-card:nth-child(3) { border: 1.5px solid var(--parchment); }
+.ch-card:nth-child(4) { border: 1.5px solid var(--brown-light); }
 
 .ch-head {
   display: flex;
@@ -305,220 +257,178 @@ body {
   transition: background 0.15s;
 }
 
-.ch-head:hover { background: var(--row-alt); }
+.ch-card:nth-child(1) .ch-head { background: var(--sage-bg); }
+.ch-card:nth-child(2) .ch-head { background: var(--mauve-bg); }
+.ch-card:nth-child(3) .ch-head { background: var(--isabeline); }
+.ch-card:nth-child(4) .ch-head { background: #F5EFE8; }
+
+.ch-head:hover { filter: brightness(0.97); }
 
 .ch-num {
+  font-family: 'DM Sans', sans-serif;
   font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 300;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
-  padding-top: 4px;
+  padding-top: 6px;
   flex-shrink: 0;
-  width: 72px;
+  width: 64px;
 }
 
 .ch-label { flex: 1; }
 
 .ch-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--red);
-  line-height: 1.2;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--brown);
+  line-height: 1.15;
 }
 
 .ch-subtitle {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 11px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 400;
   font-style: italic;
-  color: var(--blue-light);
-  margin-top: 3px;
-  letter-spacing: 0.02em;
+  color: var(--brown-mid);
+  margin-top: 4px;
+  line-height: 1.4;
 }
 
 .ch-tog {
-  font-size: 20px;
-  color: var(--muted);
+  font-size: 18px;
+  color: var(--brown-light);
   flex-shrink: 0;
-  padding-top: 2px;
-  line-height: 1;
+  padding-top: 4px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
 }
 
 .ch-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.4s ease, padding 0.3s ease;
   padding: 0 22px;
-  border-top: 0px solid var(--border);
+  background: var(--warm-white);
+  border-top: 0px solid transparent;
 }
 
 .ch-body.open {
-  max-height: 600px;
-  padding: 16px 22px 20px;
-  border-top: 1px dashed var(--border);
+  max-height: 1400px;
+  padding: 20px 22px 24px;
+  border-top: 1px dashed var(--parchment);
 }
 
 .ch-desc {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 15px;
-  color: var(--blue);
-  line-height: 1.65;
-  margin-bottom: 14px;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--brown-mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
   max-width: 560px;
 }
 
-.tone-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
-.tone-lbl {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+.tone-row { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.tone-lbl { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 
 .tone-tag {
+  font-family: 'DM Sans', sans-serif;
   font-size: 10px;
-  padding: 2px 10px;
-  background: var(--tag-bg);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  color: var(--blue);
-  font-family: 'Courier New', Courier, monospace;
+  font-weight: 300;
+  padding: 3px 11px;
+  border-radius: 20px;
+  color: var(--brown-mid);
 }
 
-.prompts-lbl {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
+.ch-card:nth-child(1) .tone-tag { background: var(--sage-bg); border: 1px solid var(--sage-light); color: var(--sage); }
+.ch-card:nth-child(2) .tone-tag { background: var(--mauve-bg); border: 1px solid var(--mauve-light); color: var(--mauve); }
+.ch-card:nth-child(3) .tone-tag { background: var(--isabeline); border: 1px solid var(--parchment); }
+.ch-card:nth-child(4) .tone-tag { background: #F5EFE8; border: 1px solid var(--brown-light); color: var(--brown-mid); }
 
-.prompts { list-style: none; display: grid; gap: 5px; }
-.prompts li {
-  font-size: 13px;
-  color: var(--blue);
-  padding-left: 18px;
-  position: relative;
-  line-height: 1.6;
-}
-.prompts li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--red);
-  font-size: 10px;
-  top: 3px;
-}
+.prompts-lbl { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+
+.prompts { list-style: none; display: grid; gap: 6px; }
+.prompts li { font-family: 'EB Garamond', serif; font-size: 15.5px; color: var(--brown-mid); padding-left: 18px; position: relative; line-height: 1.65; }
+.prompts li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); font-size: 12px; }
 
 /* ── ROLES ── */
-.roles-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
+.roles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-.role-card {
-  border: 1.5px solid var(--blue);
-  border-radius: 4px;
-  padding: 18px 22px;
-}
+.role-card { border-radius: 3px; padding: 20px 24px; }
+.role-card:nth-child(1) { background: var(--sage-bg); border: 1px solid var(--sage-light); }
+.role-card:nth-child(2) { background: var(--mauve-bg); border: 1px solid var(--mauve-light); }
 
-.role-type {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--red);
-  margin-bottom: 10px;
-}
-
-.role-list { list-style: none; display: grid; gap: 5px; }
-.role-list li { font-size: 13px; color: var(--blue); padding-left: 16px; position: relative; }
-.role-list li::before { content: '▸'; position: absolute; left: 0; color: var(--red); font-size: 10px; top: 3px; }
+.role-t { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300; font-style: italic; color: var(--brown); margin-bottom: 10px; }
+.rlist { list-style: none; display: grid; gap: 5px; }
+.rlist li { font-family: 'EB Garamond', serif; font-size: 15px; color: var(--brown-mid); padding-left: 16px; position: relative; }
+.rlist li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); font-size: 12px; }
 
 /* ── GUIDELINES ── */
-.gl-block { margin-bottom: 30px; }
-
+.gl-block { margin-bottom: 28px; }
 .gl-sub {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--warm-white);
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  background: var(--brown-mid);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
 }
 
-.gl-sub::before { content: '//'; color: var(--red); font-size: 12px; }
-
-.gl-list { list-style: none; display: grid; gap: 8px; }
-.gl-list li { font-size: 13.5px; color: var(--blue); padding-left: 18px; position: relative; line-height: 1.7; }
-.gl-list li::before { content: '—'; position: absolute; left: 0; color: var(--muted); font-size: 11px; top: 2px; }
+.glist { list-style: none; display: grid; gap: 8px; }
+.glist li { font-family: 'EB Garamond', serif; font-size: 15.5px; color: var(--text); padding-left: 18px; position: relative; line-height: 1.75; }
+.glist li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); font-size: 12px; top: 2px; }
 
 .notice {
-  border: 1.5px solid var(--red);
-  border-radius: 3px;
-  padding: 14px 18px;
+  border: 1px solid var(--mauve-light);
+  border-left: 3px solid var(--mauve);
+  border-radius: 0 3px 3px 0;
+  padding: 14px 20px;
   margin: 14px 0;
-  background: #FDF5F5;
+  background: var(--mauve-bg);
 }
 
-.notice p { font-size: 13px; color: var(--red); line-height: 1.7; }
-.notice strong { font-weight: 700; }
+.notice p { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 400; color: var(--brown); line-height: 1.75; }
 
 /* ── COMPENSATION ── */
 .comp-card {
-  border: 1.5px solid var(--blue);
-  border-radius: 4px;
-  padding: 24px 28px;
+  border-radius: 3px;
+  padding: 26px 30px;
+  background: var(--isabeline);
+  border: 1px solid var(--parchment);
+  border-top: 3px solid var(--sage-light);
 }
 
-.comp-list { list-style: none; display: grid; gap: 8px; margin: 14px 0 18px; }
-.comp-list li { font-size: 13.5px; color: var(--blue); padding-left: 20px; position: relative; line-height: 1.7; }
-.comp-list li::before { content: '✦'; position: absolute; left: 0; color: var(--red); font-size: 9px; top: 4px; }
+.clist { list-style: none; display: grid; gap: 8px; margin: 14px 0 18px; }
+.clist li { font-family: 'EB Garamond', serif; font-size: 15.5px; color: var(--text); padding-left: 18px; position: relative; line-height: 1.75; }
+.clist li::before { content: '✦'; position: absolute; left: 0; color: var(--mauve); font-size: 9px; top: 5px; }
 
-.comp-note { font-size: 12px; color: var(--muted); line-height: 1.7; font-style: italic; }
+/* ── BOTANICAL DIVIDER ── */
+.botanical-divider { text-align: center; color: var(--sage-light); font-size: 18px; letter-spacing: 0.2em; margin: 52px 0; opacity: 0.8; }
 
 /* ── FOOTER ── */
-.footer {
-  margin-top: 60px;
-  padding-top: 24px;
-  border-top: 2px solid var(--red);
-  text-align: center;
-}
-
-.footer-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--red);
-  letter-spacing: 0.04em;
-}
+.footer { margin-top: 60px; padding-top: 32px; border-top: 2px solid var(--sage-light); text-align: center; }
+.footer-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; font-style: italic; color: var(--muted); letter-spacing: 0.12em; }
 
 @media (max-width: 600px) {
-  .page { padding: 36px 20px 60px; }
+  .page { padding: 40px 20px 72px; }
   .topbar { padding: 16px 20px; }
-  .specs-grid { grid-template-columns: 1fr 1fr; }
+  .specs-row { flex-wrap: wrap; }
+  .spec-item { flex: 1 1 45%; }
   .roles-grid { grid-template-columns: 1fr; }
-  .spec-item { border-bottom: 1px solid var(--border); }
 }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="banner-placeholder">[ banner image — coming soon ]</div>
   <div class="social-links">
@@ -528,157 +438,185 @@ body {
 
 <div class="page">
 
-  <!-- MASTHEAD -->
   <div class="masthead">
-    <p class="masthead-eyebrow">Info Dokumen Fanzine</p>
-    <h1 class="masthead-title">MUSIM<br>MEKARNYA<br>RASA</h1>
-    <p class="masthead-sub">A Nidjae Fanzine</p>
-    <p class="masthead-tagline">Untuk memilihmu, dalam ketenangan setiap hari.<br>Kemarin, hari ini, dan semua hari esok.</p>
-    <p class="masthead-meta">Terakhir diperbarui: 8 Juni 2026 &nbsp;·&nbsp; Dokumen ini dapat diperbarui sewaktu-waktu.</p>
+    <p class="mast-eyebrow">Info Dokumen Fanzine</p>
+    <h1 class="mast-title">Musim<br><em>Mekarnya</em><br>Rasa</h1>
+    <p class="mast-sub">A Nidjae Fanzine</p>
+    <p class="mast-tagline">Untuk memilihmu, dalam ketenangan setiap hari.<br>Kemarin, hari ini, dan semua hari esok.</p>
+    <p class="mast-meta">Terakhir diperbarui: 8 Juni 2026 &nbsp;·&nbsp; Dokumen ini dapat diperbarui sewaktu-waktu.</p>
   </div>
 
   <!-- ABOUT -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
+      <div class="sec-rule-left"></div>
       <span class="sec-title">About</span>
       <div class="sec-rule"></div>
     </div>
-    <p class="about-lede">Cinta yang tumbuh dalam hal-hal sehari-hari.</p>
-    <p class="about-body"><strong>MUSIM MEKARNYA RASA</strong> adalah tentang cinta yang bersembunyi dalam hal-hal sehari-hari. Bukan hanya tentang jatuh cinta, tetapi tentang terus memilih satu sama lain, berulang kali, setelah semua yang telah mereka lalui bersama — prinsip <em>old married couple</em>. Setiap karya dalam fanzine ini adalah satu sudut dari rumah yang sama.</p>
-    <p class="about-body">Proyek fanzine ini hadir sebagai perayaan atas cinta yang tumbuh di dalam komunitas ini, sekaligus sebagai surat cinta untuk Nidjae. Dari sisi desain, fanzine ini akan menyerupai majalah tradisional yang memadukan karya seni dan tulisan secara apik, dibangun di atas estetika yang hangat dan domestik.</p>
-    <p class="about-body">Kami ingin fanzine ini terasa seperti rumah yang dibangun oleh anggota komunitas — jika kamu punya cerita atau visi untuk yang ingin dihadirkan, kami tidak sabar untuk melihat karyamu!</p>
-    <p class="about-disclaimer">Proyek non-profesional yang dijalankan oleh penggemar, tidak berafiliasi dengan agensi dalam kapasitas resmi apapun.</p>
+    <p class="about-body"><strong style="font-weight:700;color:var(--brown)">MUSIM MEKARNYA RASA</strong> adalah tentang cinta yang bersembunyi dalam hal-hal sehari-hari. Bukan hanya tentang jatuh cinta, tetapi tentang terus memilih satu sama lain, berulang kali, setelah semua yang telah mereka lalui bersama (prinsip <em>old married couple</em>). Setiap karya dalam fanzine ini adalah satu sudut dari rumah yang sama.</p>
+    <p class="about-body">Proyek fanzine ini hadir sebagai perayaan atas cinta yang tumbuh di dalam komunitas ini, sekaligus sebagai surat cinta untuk Nidjae.</p>
+    <p class="about-body">Dari sisi desain, fanzine ini akan menyerupai majalah tradisional yang memadukan karya seni dan tulisan, dibangun di atas estetika yang hangat dan domestik. Setiap bab membawa pembaca melalui waktu yang berbeda dalam sehari, menonjolkan cara-cara kecil Nidjae saling mendukung satu sama lain dalam keseharian mereka.</p>
+    <p class="about-body">Kami ingin fanzine ini terasa seperti rumah yang dibangun oleh anggota komunitas, jadi jika kamu punya cerita atau visi untuk yang ingin dihadirkan, kamu tidak sabar untuk melihat karyamu!</p>
+    <p class="about-disclaimer">Ini adalah proyek non-profesional yang dijalankan oleh penggemar dan tidak berafiliasi dengan agensi dalam kapasitas resmi apapun.</p>
   </section>
+
+  <div class="botanical-divider">𓇢𓆸 𓇢𓆸 𓇢𓆸</div>
 
   <!-- SCHEDULE -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
+      <div class="sec-rule-left"></div>
       <span class="sec-title">Schedule</span>
       <div class="sec-rule"></div>
     </div>
     <table class="sched-table">
-      <tr class="s-key"><td class="s-event">Interest Check</td><td class="s-date">3 Juni 2026</td></tr>
+      <tr class="s-key"><td class="s-event">Interest check</td><td class="s-date">3 Juni 2026</td></tr>
       <tr class="s-key"><td class="s-event">Announcement</td><td class="s-date">21 Juni 2026</td></tr>
-      <tr class="s-key"><td class="s-event">Contributor Applications &amp; Pitches</td><td class="s-date">21 – 27 Juni 2026</td></tr>
-      <tr class="s-key"><td class="s-event">Contributor Application Result</td><td class="s-date">29 Juni 2026</td></tr>
-      <tr class="s-checkin"><td class="s-event">Check-in 1 — 30%</td><td class="s-date">12 Juli 2026</td></tr>
-      <tr class="s-checkin"><td class="s-event">Check-in 2 — 60%</td><td class="s-date">19 Juli 2026</td></tr>
-      <tr class="s-checkin"><td class="s-event">Check-in 3 — 90%</td><td class="s-date">26 Juli 2026</td></tr>
-      <tr class="s-final"><td class="s-event">Final Submission</td><td class="s-date">31 Juli 2026</td></tr>
+      <tr class="s-key"><td class="s-event">Contributor applications &amp; pitches</td><td class="s-date">21 – 27 Juni 2026</td></tr>
+      <tr class="s-key"><td class="s-event">Contributor application result</td><td class="s-date">29 Juni 2026</td></tr>
+      <tr class="s-checkin"><td class="s-event">Check-in 1 (30%)</td><td class="s-date">12 Juli 2026</td></tr>
+      <tr class="s-checkin"><td class="s-event">Check-in 2 (60%)</td><td class="s-date">19 Juli 2026</td></tr>
+      <tr class="s-checkin"><td class="s-event">Check-in 3 (90%)</td><td class="s-date">26 Juli 2026</td></tr>
+      <tr class="s-final"><td class="s-event">Final submission (100%)</td><td class="s-date">31 Juli 2026</td></tr>
     </table>
   </section>
+
+  <div class="botanical-divider">𓇢𓆸 𓇢𓆸 𓇢𓆸</div>
 
   <!-- ZINE SPECS -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
+      <div class="sec-rule-left"></div>
       <span class="sec-title">Zine Specs</span>
       <div class="sec-rule"></div>
     </div>
-    <div class="specs-grid">
+    <div class="specs-row">
       <div class="spec-item"><div class="spec-lbl">Ukuran</div><div class="spec-val">A5</div></div>
       <div class="spec-item"><div class="spec-lbl">Cover</div><div class="spec-val">Softcover</div></div>
-      <div class="spec-item"><div class="spec-lbl">Warna</div><div class="spec-val">Full Color</div></div>
-      <div class="spec-item"><div class="spec-lbl">Halaman &amp; Kontributor</div><div class="spec-val">TBA</div></div>
+      <div class="spec-item"><div class="spec-lbl">Warna</div><div class="spec-val">Full color</div></div>
+      <div class="spec-item"><div class="spec-lbl">Halaman &amp; Kontributor</div><div class="spec-val">Menyusul</div></div>
     </div>
   </section>
 
-  <!-- TEMA / CHAPTERS -->
+  <div class="botanical-divider">𓇢𓆸 𓇢𓆸 𓇢𓆸</div>
+
+  <!-- TEMA -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
+      <div class="sec-rule-left"></div>
       <span class="sec-title">Tema</span>
       <div class="sec-rule"></div>
     </div>
     <div class="ch-list">
 
+      <!-- CHAPTER 1 -->
       <div class="ch-card">
         <div class="ch-head" onclick="toggleCh(this)">
           <span class="ch-num">Chapter 1</span>
           <div class="ch-label">
-            <div class="ch-name">PAGI</div>
+            <div class="ch-name">Pagi</div>
             <div class="ch-subtitle">'Yang Pertama Dilihat Waktu Bangun'</div>
           </div>
           <span class="ch-tog">+</span>
         </div>
         <div class="ch-body">
-          <p class="ch-desc">Menjelajahi awal hari mereka yang lembut, dari rutinitas yang tidak pernah berubah hingga kenyamanan diam-diam saat terbangun di sisi satu sama lain.</p>
+          <p class="ch-desc">menjelajahi awal hari mereka yang lembut, dari rutinitas yang tidak pernah berubah hingga kenyamanan diam-diam saat terbangun di sisi satu sama lain.</p>
           <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Hangat</span><span class="tone-tag">Tenang</span><span class="tone-tag">Fluff</span></div>
           <div class="prompts-lbl">Prompts</div>
           <ul class="prompts">
-            <li>Sarapan yang dibuat tanpa diminta</li>
-            <li>Rutinitas pagi yang tidak berubah selama bertahun-tahun</li>
+            <li>Sarapan yang sudah siap di meja sebelum yang satu bangun</li>
+            <li>Rutinitas pagi yang tidak pernah berubah selama bertahun-tahun, siapa yang mandi duluan, siapa yang buat kopi</li>
             <li>Rambut berantakan dan tidak ada yang peduli</li>
-            <li>Siapa yang bangun duluan dan kenapa</li>
+            <li>Siapa yang bangun lebih dulu, dan apa yang mereka lakukan sambil menunggu yang satu terbangun</li>
+            <li>Setengah sadar, tangan yang bergerak mencari dan menemukan — <em>"Kamu masih di sini"</em> rasa lega yang tidak perlu diucapkan</li>
+            <li>Cahaya pagi yang masuk lewat tirai dan jatuh di wajah yang masih tidur</li>
+            <li>Rebutan selimut yang sudah jadi rutinitas — dan yang satu selalu kalah</li>
+            <li>Alarm yang dimatiin berkali-kali, dan yang satu sudah hafal berapa kali sebelum yang lain benar-benar bangun</li>
+            <li>"Aku belum sikat gigi" dan tidak ada yang peduli</li>
           </ul>
         </div>
       </div>
 
+      <!-- CHAPTER 2 -->
       <div class="ch-card">
         <div class="ch-head" onclick="toggleCh(this)">
           <span class="ch-num">Chapter 2</span>
           <div class="ch-label">
-            <div class="ch-name">SIANG</div>
+            <div class="ch-name">Siang</div>
             <div class="ch-subtitle">'Yang Dirasakan Waktu Kamu Tidak Ada di Sini'</div>
           </div>
           <span class="ch-tog">+</span>
         </div>
         <div class="ch-body">
-          <p class="ch-desc">Menjelajahi beratnya jam-jam yang dihabiskan terpisah, janji-janji tak terucap dan kebiasaan yang terbentuk dengan sendirinya, yang membuat mereka merindukan rumah.</p>
-          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Playful</span><span class="tone-tag">Slice of Life</span></div>
+          <p class="ch-desc">menjelajahi beratnya jam-jam yang dihabiskan terpisah, janji-janji tak terucap dan kebiasaan yang terbentuk dengan sendirinya, yang membuat mereka merindukan rumah.</p>
+          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Playful</span><span class="tone-tag">Slice of life</span></div>
           <div class="prompts-lbl">Prompts</div>
           <ul class="prompts">
-            <li>Diam-diam bangga sama satu sama lain</li>
-            <li>"Nanti cerita" — janji kecil yang jadi alasan pulang</li>
-            <li>Beli dua padahal buat sendiri karena sudah terlalu terbiasa</li>
+            <li>Kursi kosong di seberang meja makan</li>
+            <li>Diam-diam bangga melihat yang satu dari kejauhan, tanpa bilang apa-apa</li>
+            <li>Menoleh untuk bilang sesuatu, tapi menemukan tempat yang kosong di sisinya</li>
+            <li>"Nanti cerita" janji kecil yang jadi alasan pulang</li>
+            <li>Bawain pulang sesuatu yang tidak diminta tapi tepat sekali karena sudah hafal</li>
             <li>Menghitung jam sampai pulang tanpa sadar sudah menghitung</li>
+            <li>Ingat sesuatu yang lucu terjadi kemarin dan ketawa sendiri, lalu sadar tidak ada yang bisa diajak ketawa sekarang</li>
+            <li>Nelpon bukan karena ada yang penting, tapi karena sepi</li>
+            <li>Foto yang dikirim tanpa caption — dan yang satu langsung paham maksudnya</li>
           </ul>
         </div>
       </div>
 
+      <!-- CHAPTER 3 -->
       <div class="ch-card">
         <div class="ch-head" onclick="toggleCh(this)">
           <span class="ch-num">Chapter 3</span>
           <div class="ch-label">
-            <div class="ch-name">SORE</div>
+            <div class="ch-name">Sore</div>
             <div class="ch-subtitle">'Yang Tidak Perlu Diucapkan Tapi Selalu Dirasakan'</div>
           </div>
           <span class="ch-tog">+</span>
         </div>
         <div class="ch-body">
-          <p class="ch-desc">Menjelajahi kedekatan yang ditemukan dalam keheningan yang nyaman, di mana kata-kata tak lagi dibutuhkan untuk saling memahami.</p>
+          <p class="ch-desc">menjelajahi kedekatan yang ditemukan dalam keheningan dan keheningan yang nyaman, di mana kata-kata tak lagi dibutuhkan untuk saling memahami.</p>
           <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Melankolis</span><span class="tone-tag">Sinematik</span></div>
           <div class="prompts-lbl">Prompts</div>
           <ul class="prompts">
-            <li>Duduk di dekat jendela, tidak ngobrol, tapi tidak perlu</li>
+            <li>Duduk di dekat jendela bersama, tidak ngobrol, tidak perlu</li>
             <li>Hujan dan tidak kemana-mana</li>
             <li>Suara langkahnya yang sudah hafal dari kejauhan</li>
-            <li>Tidak perlu ditanya "kamu baik-baik saja?" karena sudah tahu dari cara dia masuk pintu</li>
+            <li>Tidak perlu bertanya "kamu baik-baik saja?" karena sudah tahu jawabannya dari cara dia masuk pintu</li>
             <li>Ketenangan yang hanya ada waktu dia di ruangan yang sama</li>
+            <li>Tatapan sedetik yang artinya satu paragraf</li>
+            <li>Nonton sesuatu yang sudah pernah ditonton berkali-kali, dan masih ketawa di bagian yang sama</li>
+            <li>Sudah bisa bedain mana capek biasa, mana capek yang perlu dipeluk, mana capek yang perlu didiamkan</li>
+            <li>Ngerjain sesuatu di ruangan yang sama tanpa ngobrol, tapi rasanya tidak sendiri</li>
+            <li>Gesture kecil yang sudah jadi bahasa sendiri, kayak tepukan di bahu, anggukan</li>
           </ul>
         </div>
       </div>
 
+      <!-- CHAPTER 4 -->
       <div class="ch-card">
         <div class="ch-head" onclick="toggleCh(this)">
           <span class="ch-num">Chapter 4</span>
           <div class="ch-label">
-            <div class="ch-name">MALAM</div>
+            <div class="ch-name">Malam</div>
             <div class="ch-subtitle">'Yang Tetap Ada di Ujung Hari'</div>
           </div>
           <span class="ch-tog">+</span>
         </div>
         <div class="ch-body">
-          <p class="ch-desc">Menjelajahi momen-momen paling intim di penghujung hari, dari ritual larut malam hingga kehangatan yang menenangkan saat tertidur bersama.</p>
-          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Intim</span><span class="tone-tag">Berat tapi Hangat</span></div>
+          <p class="ch-desc">menjelajahi momen-momen paling intim mereka di penghujung hari, dari ritual larut malam hingga kehangatan yang menenangkan saat tertidur bersama.</p>
+          <div class="tone-row"><span class="tone-lbl">Tone</span><span class="tone-tag">Intim</span><span class="tone-tag">Berat tapi hangat</span></div>
           <div class="prompts-lbl">Prompts</div>
           <ul class="prompts">
             <li>Lampu yang selalu dinyalakan kalau yang satu belum pulang</li>
-            <li>Cerita tentang hari masing-masing sebelum tidur</li>
+            <li>Cerita tentang hari masing-masing sebelum tidur, hal-hal kecil yang tidak penting tapi selalu didengarkan sampai habis</li>
             <li>Tertidur duluan dan tidak ada yang marah</li>
+            <li>Gelap yang tidak menakutkan karena kamu ada</li>
             <li>Ritual kecil sebelum tidur yang tidak pernah berubah selama bertahun-tahun</li>
+            <li>Berbagi selimut yang tidak pernah cukup lebar, tapi tidak ada yang pindah</li>
+            <li>Tidur di posisi yang sama setiap malam, dan tahu persis kapan yang satu tidak bisa tidur dari cara napasnya</li>
+            <li><em>"Tempo hari, sekarang, nanti"</em> berbaring dan menyadari bahwa ini sudah lebih dari cukup</li>
           </ul>
         </div>
       </div>
@@ -686,107 +624,114 @@ body {
     </div>
   </section>
 
-  <!-- ROLES -->
+  <div class="botanical-divider">𓇢𓆸 𓇢𓆸 𓇢𓆸</div>
+
+  <!-- PENERBITAN -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
-      <span class="sec-title">Peran Kontributor</span>
+      <div class="sec-rule-left"></div>
+      <span class="sec-title">Penerbitan, Percetakan, dan Merchandise</span>
       <div class="sec-rule"></div>
     </div>
-    <div class="roles-grid">
-      <div class="role-card">
-        <div class="role-type">Artists</div>
-        <ul class="role-list">
-          <li>Single-page artists</li>
-          <li>Comic / webtoon artists</li>
-        </ul>
-      </div>
-      <div class="role-card">
-        <div class="role-type">Writers</div>
-        <ul class="role-list">
-          <li>Poetry</li>
-          <li>Short fiction (maks. 3.000 kata)</li>
-        </ul>
-      </div>
-    </div>
+    <ul class="glist">
+      <li>Satu salinan fisik fanzine akan disertakan dalam acara MUSIM MEKARNYA RASA untuk setiap peserta yang hadir.</li>
+      <li>Salinan digital fanzine akan diupload secara cuma-cuma setelah acara MUSIM MEKARNYA RASA selesai.</li>
+    </ul>
   </section>
 
-  <!-- GUIDELINES -->
+  <div class="botanical-divider">𓇢𓆸 𓇢𓆸 𓇢𓆸</div>
+
+  <!-- PANDUAN KONTRIBUTOR -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
+      <div class="sec-rule-left"></div>
       <span class="sec-title">Panduan Kontributor</span>
       <div class="sec-rule"></div>
     </div>
 
     <div class="gl-block">
       <div class="gl-sub">Konten</div>
-      <ul class="gl-list">
-        <li>Semua karya harus merupakan karya orisinal yang dibuat khusus untuk zine ini.</li>
+      <ul class="glist">
+        <li>Semua karya yang dikumpulkan harus merupakan karya orisinal yang dibuat khusus untuk zine ini.</li>
         <li>Semua karya harus mengikuti template, tema, dan format yang telah ditentukan.</li>
-        <li>Kebijakan ketat <strong>No Heavy/Dead Dove</strong> berlaku — pelecehan seksual, non-konsensual, major character death, atau graphic violence tidak diterima dalam kondisi apapun.</li>
-        <li>Karya 18+ diterima: harus dilabeli jelas dan kontributor wajib konfirmasi usia 18+. Kebijakan No Heavy/Dead Dove tetap berlaku.</li>
+        <li>Semua konten harus menghindari topik-topik sensitif. Zine ini memberlakukan kebijakan ketat <em>No Heavy/Dead Dove</em>; tema eksplisit termasuk namun tidak terbatas pada pelecehan seksual, tema non-konsensual, major character death, atau graphic violence tidak akan diterima dalam kondisi apapun.</li>
+        <li>Zine ini menerima karya bermuatan dewasa (18+) dengan ketentuan sebagai berikut: karya 18+ harus dilabeli dengan jelas pada saat pengumpulan; kontributor yang mengajukan karya 18+ wajib mengkonfirmasi bahwa mereka berusia 18 tahun ke atas; meski konten dewasa diperbolehkan, kebijakan <em>No Heavy/Dead Dove</em> tetap berlaku sepenuhnya.</li>
       </ul>
       <div class="notice">
-        <p>Penggunaan kecerdasan buatan atau AI generatif dalam karya <strong>dilarang keras</strong> dalam kapasitas apapun dan akan mengakibatkan pemecatan langsung dari proyek fanzine ini.</p>
+        <p>Penggunaan kecerdasan buatan atau AI generatif dalam karya dilarang keras dalam kapasitas apapun dan akan mengakibatkan pemecatan langsung dari proyek fanzine ini.</p>
       </div>
     </div>
 
     <div class="gl-block">
       <div class="gl-sub">Deadline</div>
-      <ul class="gl-list">
-        <li>Semua tenggat waktu wajib dipenuhi. Tiga kali pengingat akan diberikan oleh moderator.</li>
-        <li>Perpanjangan dapat diberikan atas permintaan berdasarkan kebijaksanaan moderator.</li>
-        <li>Jika tidak dapat melanjutkan, segera hubungi moderator fanzine.</li>
+      <ul class="glist">
+        <li>Semua tenggat waktu wajib dipenuhi. Pengingat sebanyak tiga kali akan diberikan oleh moderator fanzine, namun ketepatan waktu adalah tanggung jawab kontributor.</li>
+        <li>Hal tak terduga bisa saja terjadi, sehingga perpanjangan waktu dapat diberikan atas permintaan dan berdasarkan kebijaksanaan moderator.</li>
+        <li>Jika kamu tidak dapat melanjutkan pengerjaan zine karena alasan apapun, segera hubungi moderator fanzine.</li>
       </ul>
     </div>
 
     <div class="gl-block">
-      <div class="gl-sub">Komunikasi</div>
-      <ul class="gl-list">
-        <li>Kontributor bergabung ke Group DM resmi zine di X.</li>
-        <li>Pengumuman dan pengingat penting akan dibagikan di sana.</li>
+      <div class="gl-sub">Communication</div>
+      <ul class="glist">
+        <li>Kontributor diharapkan untuk bergabung ke dalam Group Direct Message resmi zine di X.</li>
+        <li>Pengumuman dan pengingat penting akan dibagikan di sana dan kontributor diharapkan untuk selalu mengikuti perkembangan terbaru.</li>
       </ul>
     </div>
 
     <div class="gl-block">
-      <div class="gl-sub">Kerahasiaan</div>
-      <ul class="gl-list">
-        <li>Karya (WIP maupun selesai) harus tetap privat — hanya boleh dibagikan di Group DM kontributor.</li>
-        <li>Pada minggu acara, preview boleh dibagikan setelah konsultasi dengan moderator.</li>
-        <li>Tujuh hari setelah acara, karya boleh dibagikan secara penuh; kontributor mempertahankan seluruh haknya.</li>
+      <div class="gl-sub">Confidentiality</div>
+      <ul class="glist">
+        <li>Karya (WIP maupun yang sudah selesai) yang dibuat untuk zine ini harus tetap bersifat privat selama proses pembuatan zine berlangsung. Satu-satunya tempat karya boleh dibagikan adalah Group Direct Message yang ditujukan khusus untuk kontributor.</li>
+        <li>Pada minggu pelaksanaan acara, kontributor boleh membagikan preview karya mereka. Konsultasikan unggahan terlebih dahulu kepada moderator fanzine sebelum memposting. Tujuh hari setelah acara MUSIM MEKARNYA RASA berakhir, kontributor boleh membagikan karya mereka secara penuh dan mempertahankan seluruh hak atas karya tersebut, serta menggunakannya sesuai keinginan mereka.</li>
       </ul>
     </div>
   </section>
 
-  <!-- PUBLIKASI -->
+  <div class="botanical-divider">𓇢𓆸 𓇢𓆸 𓇢𓆸</div>
+
+  <!-- PERAN KONTRIBUTOR -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
-      <span class="sec-title">Penerbitan &amp; Distribusi</span>
+      <div class="sec-rule-left"></div>
+      <span class="sec-title">Peran Kontributor</span>
       <div class="sec-rule"></div>
     </div>
-    <ul class="gl-list">
-      <li>Satu salinan fisik fanzine disertakan dalam acara untuk setiap peserta yang hadir.</li>
-      <li>Salinan digital akan diupload secara cuma-cuma setelah acara selesai.</li>
-    </ul>
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-t">Artists</div>
+        <ul class="rlist">
+          <li>Single-page artists</li>
+          <li>Comic/webtoon artists</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <div class="role-t">Writers</div>
+        <ul class="rlist">
+          <li>Poetry</li>
+          <li>Short fiction (maksimal 3.000 kata)</li>
+        </ul>
+      </div>
+    </div>
   </section>
+
+  <div class="botanical-divider">𓇢𓆸 𓇢𓆸 𓇢𓆸</div>
 
   <!-- KOMPENSASI -->
   <section class="section">
     <div class="sec-head">
-      <span class="sec-marker">𓇢𓆸</span>
+      <div class="sec-rule-left"></div>
       <span class="sec-title">Kompensasi</span>
       <div class="sec-rule"></div>
     </div>
     <div class="comp-card">
-      <p style="font-size:14px;color:var(--blue);line-height:1.8;margin-bottom:4px;">MUSIM MEKARNYA RASA adalah proyek nirlaba sepenuhnya. Jika anggaran memungkinkan, tujuan utama kami adalah memberikan kompensasi kepada setiap kontributor berupa:</p>
-      <ul class="comp-list">
+      <p style="font-family:'EB Garamond',serif;font-size:15.5px;color:var(--text);line-height:1.85;">MUSIM MEKARNYA RASA fanzine adalah proyek nirlaba sepenuhnya. Semua dana yang terkumpul akan digunakan terlebih dahulu untuk menutup biaya produksi. Jika anggaran memungkinkan, tujuan utama kami adalah memberikan kompensasi kepada setiap kontributor berupa:</p>
+      <ul class="clist">
         <li>Satu salinan fisik zine</li>
         <li>Bundel merchandise lengkap acara MUSIM MEKARNYA RASA</li>
-        <li>Tiket diskon untuk menghadiri acara (apabila berlaku)</li>
+        <li>Tiket diskon untuk menghadiri acara MUSIM MEKARNYA RASA apabila berlaku</li>
       </ul>
-      <p class="comp-note">Sisa dana setelah produksi akan didonasikan ke charity organization yang dipilih para kontributor. Tidak ada keuntungan yang disimpan oleh staf.</p>
+      <p style="font-family:'EB Garamond',serif;font-size:15px;color:var(--text);line-height:1.85;">Sisa dana setelah produksi akan didonasikan ke charity organization yang dipilih oleh para kontributor. Tidak ada keuntungan yang akan disimpan oleh staf.</p>
     </div>
   </section>
 
